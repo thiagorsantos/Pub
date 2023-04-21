@@ -1,7 +1,6 @@
 # Update repositories and install Squid and Wget
 sudo yum update -y
 sudo yum install squid -y
-sudo systemctl enable squid
 sudo yum install wget -y
 
 # Download a clean version of squid.conf
@@ -10,6 +9,6 @@ sudo mv /etc/squid/squid.conf /etc/squid/squid.conf2
 sudo mv squid.conf /etc/squid/
 
 # Set Squid do start with the system
-sudo systemctl start squid
+sudo systemctl enable squid
 sudo touch /.autorelabel
 sudo reboot
