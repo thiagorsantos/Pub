@@ -1,0 +1,13 @@
+sudo yum update -y
+sudo yum install squid -y
+sudo systemctl enable squid
+sudo yum install wget -y
+
+wget "https://raw.githubusercontent.com/thiagorsantos/Pub/main/squid.conf"
+sudo mv /etc/squid/squid.conf /etc/squid/squid.conf2
+sudo mv squid.conf /etc/squid/
+
+sudo systemctl start squid
+sudo systemctl status squid
+sudo touch /.autorelabel
+sudo reboot
